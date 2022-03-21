@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>edit</title>
+</head>
+<body>
+<form class ="container" th:action="@{|/login/edit/${id}|}" method="post">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">제목</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="제목" name="title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용 </label>
+        <textarea name="context"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">저장하기</button>
+    <button type="button" class="btn btn-primary" onclick="location.href='join'">돌아가기</button>
+</form>
+</body>
+</html>
