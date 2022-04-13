@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>프로젝트 생성</title>
+</head>
+<body>
+<form class ="container" action="/project/create" method="post">
+
+    <input type="hidden" id="id" name="creater" value="xm234jq">
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">프로젝트 이름</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID" name = "projectName">
+    </div>
+
+    <button type="submit" class="btn btn-primary">프로젝트 생성</button>
+</form>
+
+
+<button type="button" class="btn btn-primary" onclick="location.href='/'">취소</button>
+</body>
+</html>

@@ -24,10 +24,6 @@ public class LoginController {
     @Autowired
     ArticleRepostory articleRepostory;
 
-    @GetMapping("/hello")
-    public String Hello(){
-        return "test";
-    }
 
     @GetMapping("/")
     public String Domin(){
@@ -85,6 +81,21 @@ public class LoginController {
         System.out.println(article.toString());
         Article saved = articleRepostory.save(article);
 
+        return "test";
+    }
+
+    @GetMapping("/create/{id}")
+    public String ProjectEdit(@PathVariable String id){
+        System.out.println("create : " + id);
+        return "create_project";
+    }
+
+
+
+    @PostMapping("/project/create")
+    public String ProjectSave(@PathVariable String id, String projectName){
+        System.out.println(projectName);
+        System.out.println("in");
 
         return "test";
     }

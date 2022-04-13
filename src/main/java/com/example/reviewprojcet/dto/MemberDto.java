@@ -11,11 +11,12 @@ import lombok.ToString;
 @Setter
 @ToString
 public class MemberDto {
+    private Long seq;
     private String id;
     private String password;
-    private String email;
+
 
     public Member toEntity() {
-        return new Member(null,id,password,email);
+        return new Member(seq,id,password);
     }
 }

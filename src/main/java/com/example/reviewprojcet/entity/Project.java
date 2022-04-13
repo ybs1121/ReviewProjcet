@@ -10,16 +10,22 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member {
+public class Project {
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long seq;
 
     @Column(nullable = false)
-    String id;
+    String projectName;
 
     @Column(nullable = false)
-    String password;
+    String groupMember;
 
+    @Column(nullable = false)
+    String creater;
+
+    @Column(nullable = false)
+    String recentUpdateTime;
 
 }
