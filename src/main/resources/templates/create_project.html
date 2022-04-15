@@ -5,16 +5,23 @@
     <title>프로젝트 생성</title>
 </head>
 <body>
-<form class ="container" action="/project/create" method="post">
+<form class ="container" th:action="@{|/create/project/${id}|}" method="post">
 
-    <input type="hidden" id="id" name="creater" value="xm234jq">
+    <p th:text="${id}"></p>
+
 
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">프로젝트 이름</label>
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID" name = "projectName">
     </div>
 
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">프로젝트 참여자</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ID" name = "groupMember">
+    </div>
+
     <button type="submit" class="btn btn-primary">프로젝트 생성</button>
+
 </form>
 
 

@@ -61,43 +61,23 @@ public class LoginController {
         }
         }
 
-    @GetMapping("/{id}")
-    public String PersonalPage(@PathVariable String id, Model model){
-        model.addAttribute("id",id);
-        return "personal";
+
+//
+//    @GetMapping("/edit/{id}")
+//    public String Edit(@PathVariable String id){
+//        System.out.println("edit : " + id);
+//        return "edit";
+//    }
+//
+//    @PostMapping("/login/edit/{id}")
+//    public String EditSave(@PathVariable String id, ArticleDto articleDto){
+//        Article article = articleDto.toEntity(id);
+//        System.out.println(article.toString());
+//        Article saved = articleRepostory.save(article);
+//
+//        return "test";
+//    }
 
 
-    }
-
-    @GetMapping("/edit/{id}")
-    public String Edit(@PathVariable String id){
-        System.out.println("edit : " + id);
-        return "edit";
-    }
-
-    @PostMapping("/login/edit/{id}")
-    public String EditSave(@PathVariable String id, ArticleDto articleDto){
-        Article article = articleDto.toEntity(id);
-        System.out.println(article.toString());
-        Article saved = articleRepostory.save(article);
-
-        return "test";
-    }
-
-    @GetMapping("/create/{id}")
-    public String ProjectEdit(@PathVariable String id){
-        System.out.println("create : " + id);
-        return "create_project";
-    }
-
-
-
-    @PostMapping("/project/create")
-    public String ProjectSave(@PathVariable String id, String projectName){
-        System.out.println(projectName);
-        System.out.println("in");
-
-        return "test";
-    }
 
 }

@@ -1,10 +1,15 @@
 package com.example.reviewprojcet.dto;
 
 
+import com.example.reviewprojcet.entity.Project;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Getter
 @AllArgsConstructor
@@ -12,14 +17,21 @@ import lombok.ToString;
 @ToString
 public class ProjectDto {
 
-    Long seq;
 
     String projectName;
 
     String groupMember;
 
-    String create;
 
-    String recentUpdateTime;
+    public Project toEntity(String id){
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        String dateToStr = dateFormat.format(date);
+
+
+        return new Project(null,projectName,groupMember,id,dateToStr);
+    }
+
 
 }

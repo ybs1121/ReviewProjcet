@@ -1,8 +1,7 @@
 package com.example.reviewprojcet.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.reviewprojcet.dto.ProjectDto;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,6 +9,8 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@ToString
 public class Project {
 
     @Id
@@ -27,5 +28,7 @@ public class Project {
 
     @Column(nullable = false)
     String recentUpdateTime;
+
+
 
 }

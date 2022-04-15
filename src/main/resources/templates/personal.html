@@ -11,6 +11,13 @@
     <p> 환영 합니다.</p>
 </span>
 
+<table border="1">
+    <tr>프로젝트</tr>
+    <tr th:each="personal:${personalList}">
+        <td th:text="${personal.projectName}">${row.projectName}</td>
+    </tr>
+</table>
+
 
 
 <a th:href="@{|/edit/${id}|}">새로운 글 작성</a>
