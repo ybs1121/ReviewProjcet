@@ -15,7 +15,7 @@
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID" name = "projectName">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" id = "div_input">
         <label for="formGroupExampleInput" class="form-label">프로젝트 참여자</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ID" name = "groupMember">
     </div>
@@ -24,6 +24,20 @@
 
 </form>
 
+<button id="add_address" onclick="addMemebr()">참여자 추가</button>
+
+<script>
+var lineCount = 0;
+
+addMemebr = function () {
+var i = document.createElement('input');
+i.setAttribute("type", "text");
+i.setAttribute("ID", "Address Line " + ++lineCount);
+var addressContainer = document.getElementById("div_input");
+addressContainer.insertAdjacentElement("beforeend", i);
+}
+
+</script>
 
 <button type="button" class="btn btn-primary" onclick="location.href='/'">취소</button>
 </body>

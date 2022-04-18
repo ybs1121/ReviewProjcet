@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.sound.sampled.Port;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -22,20 +22,24 @@ public class PersonalController {
     @GetMapping("/{id}")
     public String PersonalPage(@PathVariable String id, Model model){
         model.addAttribute("id",id);
-        System.out.println(id);
+
         List<Project> projectList = projectRepository.findAll();
-        List<Project> personalList = null;
+        List<Project> personalList = new ArrayList<>();
+
 
 
         for(Project project:projectList){
+            String creater = project.getCreater();
+            try {
+                if (project.getCreater().equals("root")){
+                    personalList.add(project);
 
-            System.out.println(project.getCreater());
-            System.out.println(id);
-            if (project.getCreater().equals("root")){
-                personalList.add(project);
-                System.out.println("in");
+                }
 
-            }
+
+            }catch (Exception e){}
+
+
         }
         model.addAttribute("personalList",personalList);
         return "personal";
@@ -58,6 +62,6 @@ public class PersonalController {
         Project project = projectDto.toEntity(id);
         projectRepository.save(project);
 
-        return "test";
+        return "redirect:/{id}";
     }
 }
