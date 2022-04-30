@@ -20,7 +20,7 @@ public class ProjectDto {
 
     String projectName;
 
-    String groupMember;
+    String[] groupMember;
 
 
     public Project toEntity(String id){
@@ -28,9 +28,10 @@ public class ProjectDto {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         String dateToStr = dateFormat.format(date);
+        String groupMemberArrayToString = String.join(",", groupMember);;
 
 
-        return new Project(null,projectName,groupMember,id,dateToStr);
+        return new Project(null,projectName,groupMemberArrayToString,id,dateToStr);
     }
 
 

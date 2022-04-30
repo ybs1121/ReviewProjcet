@@ -20,21 +20,25 @@
         <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ID" name = "groupMember">
     </div>
 
+
     <button type="submit" class="btn btn-primary">프로젝트 생성</button>
 
 </form>
 
-<button id="add_address" onclick="addMemebr()">참여자 추가</button>
+<button id="addMember" onclick="addMemebr()">참여자 추가</button>
 
 <script>
 var lineCount = 0;
 
 addMemebr = function () {
+
 var i = document.createElement('input');
 i.setAttribute("type", "text");
 i.setAttribute("ID", "Address Line " + ++lineCount);
+i.setAttribute("NAME","groupMember");
 var addressContainer = document.getElementById("div_input");
 addressContainer.insertAdjacentElement("beforeend", i);
+
 }
 
 </script>

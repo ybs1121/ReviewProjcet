@@ -1,9 +1,11 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>개인 페이지 입니다.</title>
+
 </head>
 <body>
 <span>
@@ -13,14 +15,24 @@
 
 <table border="1">
     <tr>프로젝트</tr>
-    <tr th:each="personal:${personalList}">
-        <td th:text="${personal.projectName}">${row.projectName}</td>
+    <tr th:each="personal:${personalList}" >
+        <td th:text="${personal.projectName}" ><a href="#" th:href="@{/personal/detail/{id}(id=${row.projectName})}">${row.projectName}</a></td>
     </tr>
 </table>
 
 <a th:href="@{|/edit/${id}|}">새로운 글 작성</a>
 <a th:href="@{|/create/${id}|}">새로운 프로젝트 생성</a>
 
+<form class ="container" th:action="@{|/search/project/${id}|}" method="post">
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">프로젝트 이름</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID" name = "projectName">
+    </div>
+
+    <button type="submit" class="btn btn-primary"> 검색</button>
+
+</form>
 
 </body>
 </html>
